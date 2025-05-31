@@ -1,4 +1,4 @@
-import React, { createContext, useState, useMemo } from "react";
+import React, { createContext, useState, useMemo, useContext } from "react";
 import PropTypes from "prop-types";
 
 export const AuthContext = createContext();
@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   const contextValue = useMemo(
     () => ({ currentUser, setCurrentUser }),
     [currentUser]
-  );
+  ); useContext(AuthContext)
 
   return (
     <AuthContext.Provider value={contextValue}>
