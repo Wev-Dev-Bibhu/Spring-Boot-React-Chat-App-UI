@@ -11,7 +11,7 @@ A simple chat application built with React.
 - Real-time messaging
 - User-friendly interface
 - Responsive design
-- Switchable backend: Node.js or Spring Boot
+- Switchable backend: Node.js(Render) or Spring Boot(AWS)
 
 ## Getting Started
 
@@ -38,17 +38,12 @@ The app will run at [http://localhost:3000](http://localhost:3000).
 
 ### Switching Backend
 
-By default, the app connects to a Node.js backend.  
-To use a Spring Boot backend instead:
+By default, the app connects to a Node.js backend(Render).  
+To use a Spring Boot(AWS) backend instead:
 
 1. Sign in or sign up in the app.
-2. Go to the **Settings** tab and choose your preferred backend (Node.js or Spring Boot).
-3. If using Spring Boot:
-    - Start your Spring Boot backend server.
-    - Update the API endpoint URLs in the React app (e.g., in `src/config.js` or wherever your API base URL is set) to point to your Spring Boot server.
-    - Restart the React app if needed.
-
-## Folder Structure
+2. Go to the **Settings** tab and choose your preferred backend (Node.js(Render) or Spring Boot(AWS)).
+## Folder Structure for UI
 
 ```
 react-dev-frontend/
