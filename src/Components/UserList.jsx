@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { fetchAllUsers } from '../Apis/ScreenApis';
+import { ScreenApis } from '../Apis/ScreenApis';
 import { AuthContext } from '../Apis/AuthContext';
 
 const UserList = (props) => {
+  const { fetchAllUsers } = ScreenApis();
   const [searchChat, setSearchChat] = useState("");
   const [userList, setUserList] = useState([]);
   const [chatUser, setChatUser] = useState(false);

@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { signUpApi } from "../Apis/ScreenApis";
+import { ScreenApis } from "../Apis/ScreenApis";
 import { useSnackbar } from "notistack";
 
 const SignUp = () => {
+    const { signUpApi } = ScreenApis();
     const navigate = useNavigate();
-  const { enqueueSnackbar } = useSnackbar();
+    const { enqueueSnackbar } = useSnackbar();
 
 
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -41,8 +42,8 @@ const SignUp = () => {
                 email: signUpFormData.email,
                 password: signUpFormData.password,
             });
-            enqueueSnackbar("Signup successful", { variant : response.status });
-            navigate("/dashboard"); 
+            enqueueSnackbar("Signup successful", { variant: response.status });
+            navigate("/dashboard");
         } catch (err) {
             console.error("Signup error:", err);
             setError(err.message || "Something went wrong!");

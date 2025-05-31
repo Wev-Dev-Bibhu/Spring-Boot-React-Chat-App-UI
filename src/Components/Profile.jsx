@@ -4,10 +4,11 @@ import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
 import { Tooltip } from "@mui/material";
 import { AuthContext } from "../Apis/AuthContext";
-import { updateUserProfile } from "../Apis/ScreenApis";
+import { ScreenApis } from "../Apis/ScreenApis";
 import { useSnackbar } from "notistack";
 
 const Profile = () => {
+    const { updateUserProfile } = ScreenApis();
     const [activeTab, setActiveTab] = useState("overview");
     const { currentUser, setCurrentUser } = useContext(AuthContext);
     const { enqueueSnackbar } = useSnackbar();

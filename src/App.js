@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import Cookies from 'universal-cookie';
 import { useSnackbar } from 'notistack';
 import Profile from './Components/Profile';
+import Settings from './Components/Settings';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="/dashboard" element={<Header />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/messages" element={<ChatScreen />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </>
   );

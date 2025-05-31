@@ -2,12 +2,13 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { signInApi } from "../Apis/ScreenApis";
+import { ScreenApis } from "../Apis/ScreenApis";
 import { useSnackbar } from "notistack";
 import { AuthContext } from "../Apis/AuthContext";
 
 
 const SignIn = () => {
+    const { signInApi } = ScreenApis();
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();
     const { setCurrentUser } = useContext(AuthContext);
